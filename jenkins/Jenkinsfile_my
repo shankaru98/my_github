@@ -42,12 +42,15 @@ pipeline {
 
              stage ('TEST ON MAC MACHINE') {
                     steps{
+                        catchError(buildResult: 'SUCECSS', stageResult: 'FAILURE') {
                    sh '''
                    sleep 5
                    echo "This is a TEST on MAC"
+                   exit 1
                    '''
                 }
             } 
+             }
 
              stage ('TEST ON CHROME MACHINE') {
                     steps{
