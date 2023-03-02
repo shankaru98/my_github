@@ -8,6 +8,7 @@ pipeline {
                    echo "This is a BUILD stage"
                    '''
              }
+}
 
          stage ('TEST') {
              steps
