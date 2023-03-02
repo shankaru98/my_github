@@ -10,8 +10,8 @@ pipeline {
 
          stages {  
             stage ('BUILD') {
-                 cathcError(message: message, buildResult: '', stableResult: 'FAILURE')
                  steps{
+                    cathcError(message: message, buildResult: '', stableResult: 'FAILURE')
                     sh '''
                       sleep 5
                        echo "This is a BUILD stage $BRANCH_NAME"
