@@ -8,10 +8,10 @@ pipeline {
            BRANCH_NAME = "${BRANCH}"
           }
 
-         stages {  
-            stage ('BUILD') {
+         stages{  
+            stage('BUILD') {
                  steps{
-                    catchError(buildResult: 'SUCECSS', stageResult: 'FAILURE') {
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     sh '''
                       sleep 5
                        echo "This is a BUILD stage $BRANCH_NAME"
