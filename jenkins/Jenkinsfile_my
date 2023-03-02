@@ -3,7 +3,7 @@ pipeline {
     stages {  
         stage ('BUILD') {
             agent { label 'master' }  
-             steps{}
+             steps{
                  sh '''
                    sleep 5
                    echo "This is a BUILD stage"
@@ -14,22 +14,23 @@ pipeline {
 
          stage ('TEST') {
             agent { label 'slave1' }
-             steps
+             steps{
                    sh '''
                    sleep 5
                    echo "This is a TEST stage"
                    '''
              }
+         }  
             
 
          stage ('DEPLOY') {
             agent { label 'slave2' }
-             steps
+             steps{
                  sh '''
                    sleep 5
                    echo "This is a DEPLOY stage"
                    '''
              }
-            
+         }
     } 
 }
