@@ -18,13 +18,44 @@ pipeline {
                 }
             }
                stage ('TEST') {
-                       steps{
+                  parallel {
+                
+                stage ('TEST ON LINUX MACHINE') {
+                    steps{
                    sh '''
                    sleep 5
-                   echo "This is a TEST stage $BRANCH_NAME"
+                   echo "This is a TEST on LINUX"
                    '''
-             }
-         }  
+                }
+            }
+             stage ('TEST ON WINDOWS MACHINE') {
+                    steps{
+                   sh '''
+                   sleep 5
+                   echo "This is a TEST on WINDOWS"
+                   '''
+                }
+            } 
+
+             stage ('TEST ON MAC MACHINE') {
+                    steps{
+                   sh '''
+                   sleep 5
+                   echo "This is a TEST on MAC"
+                   '''
+                }
+            } 
+
+             stage ('TEST ON CHROME MACHINE') {
+                    steps{
+                   sh '''
+                   sleep 5
+                   echo "This is a TEST on CHROME"
+                   '''
+                }
+            } 
+        }
+    }  
                      stage ('DEPLOY') {
                          steps{
                       sh '''
