@@ -32,8 +32,13 @@ pipeline {
             steps{
                 sh '''
                     sleep 5
+<<<<<<< HEAD
                     echo "This is a DEPLOY stage $BRANCH_NAME"
                 '''
+=======
+                    echo "This is a DEPLOY stage"
+                         '''
+>>>>>>> 3226aa9adf8a6eed883a33036f9b0b9172d940d7
             }
         }
     }
