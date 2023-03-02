@@ -2,24 +2,25 @@ pipeline {
     agent any
  
     parameters {
-     string defaultValue: 'main', name: 'BRANCH', trim: true
-}
-    environment {
-           BRANCH_NAME = "${BRANCH}"
-          }
+       string defaultValue: 'main', name: 'BRANCH', trim: true
+            }
+
+   environment {
+        BRANCH_NAME = "${BRANCH}"
+    }
 
          stages{  
             stage('BUILD') {
                  steps{
                     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    sh '''
-                      sleep 5
-                       echo "This is a BUILD stage $BRANCH_NAME"
+                      sh '''
+                        sleep 5
+                         echo "This is a BUILD stage $BRANCH_NAME"
                          exit 1
                          '''
+                   }
                 }
-            }
-            }
+         }
                stage ('TEST') {
                   parallel {
                 
@@ -60,8 +61,8 @@ pipeline {
                    '''
                 }
             } 
-        }
-    }  
+           }
+         }  
                      stage ('DEPLOY') {
                          steps{
                       sh '''
@@ -71,4 +72,23 @@ pipeline {
                }
            }
        } 
+
+     post {
+        always {
+            echo "This will run always"
+        }
+
+        success {
+            echo "This "$JOB_NAME SUCCESS - $BUILD_NUMBER $BUILD_ID $BUILD_DISPLAY_NAME"
+       }
+        
+        unstable {
+            echo "This "$JOB_NAME UNSTABLE - $BUILD_NUMBER $BUILD_ID $BUILD_DISPLAY_NAME"
+        }
+        
+        failure {
+            echo "This "$JOB_NAME FAILED - $BUILD_NUMBER $BUILD_ID $BUILD_DISPLAY_NAME"
+        }
+     }  
+    
 }
