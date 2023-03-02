@@ -11,7 +11,7 @@ pipeline {
          stages {  
             stage ('BUILD') {
                  steps{
-                    cathcError(buildResult: 'SUCECSS', stableResult: 'FAILURE')
+                    cathcError(buildResult: 'SUCECSS', stableResult: 'FAILURE') {
                     sh '''
                       sleep 5
                        echo "This is a BUILD stage $BRANCH_NAME"
