@@ -1,0 +1,5 @@
+root_ec2_ami = "ami-0b828c1c5ac3f13ee"
+root_ec2_type = "t2.micro"
+root_key_name = "my_pem"
+root_key_path = "./keys/my_pem.pem"
+root_sg_name = "my_sg"
