@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: ip-app-deployment
+spec:
+    replicas: 20
+    template:
+        metadata:
+            labels:
+              app: ip-app
+        spec:
+           containers:
+              - name: ipapp
+                image: shankaru/new_repo:v1
+                ports:
+                 - containerPort: 80 
+    selector:
+        matchLabels:
+           app: ip-app  
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+   name: ip-app-cluster-ip
+spec:
+   type: ClusterIP
+   selector: 
+       app: ip-app
+   ports: 
+     - name: http
+       port: 30002
+       targetPort: 80 
