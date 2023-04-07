@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-   name: nginx-statefulset
+   name: ip-app-statefulset
 spec:
     replicas: 4
     template:
         metadata:
             labels:
-              app: my-nginx-sfs
+              app: ip-app-sfs
         spec:
            containers:
-              - name: nginx
-                image: nginx:1.22.1
+              - name: ipapp
+                image: shankaru/new_repo:v1
                 ports:
-                 - containerPort: 80 
+                 - containerPort: 8080
     selector:
         matchLabels:
-           app: my-nginx-sfs  
+           app: ip-app-sfs  
 
 ---
 apiVersion: v1
