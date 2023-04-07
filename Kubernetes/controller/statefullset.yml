@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+   name: nginx-statefulset
+spec:
+    replicas: 4
+    template:
+        metadata:
+            labels:
+              app: my-nginx-sfs
+        spec:
+           containers:
+              - name: nginx
+                image: nginx:1.22.1
+                ports:
+                 - containerPort: 80 
+    selector:
+        matchLabels:
+           app: my-nginx-sfs  
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+   name: ip-app-headless-svc
+spec:
+   clusterIP: None
+   selector: 
+       app: ip-app-sfs
+   ports: 
+     - name: http
+       port: 30002
+       targetPort: 8080
