@@ -13,7 +13,7 @@ spec:
               - name: ipapp
                 image: shankaru/new_repo:v1
                 ports:
-                 - containerPort: 8080 
+                 - containerPort: 80
     selector:
         matchLabels:
            app: ip-app  
