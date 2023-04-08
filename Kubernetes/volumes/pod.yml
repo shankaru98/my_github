@@ -9,8 +9,8 @@ spec:
        ports:
          - containerPort: 80 
        volumeMounts:
-        -name: my-volume
-         mountPath: '/app/volume' 
+        - name: my-volume
+          mountPath: '/app/volume' 
 
     volumes:
     - name: my-volume
