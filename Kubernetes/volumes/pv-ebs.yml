@@ -4,11 +4,11 @@ metadata:
   name: aws-pv
 spec:
     awsElasticBlockStore:
-      volumeID: 
+      volumeID: vol-0da0d35a549d93cbf
       fsType: xfs
     accessModes:
       - ReadWriteMany
     capacity:
        storage: 4Gi
     hostPath: 
-       path: 'home/ubuntu/'  
+       path: '/'  
