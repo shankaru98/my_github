@@ -11,7 +11,7 @@ spec:
        volumeMounts:
         - name: sharelogs
           mountPath: "/var/log/nginx"
-          initContainers:
+          
      - name: busybox-sharelogs
        image: busybox
        command: ["/bin/sh"]
