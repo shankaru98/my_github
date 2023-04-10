@@ -5,11 +5,11 @@ metadata:
 spec:
     containers:
      - name: nginx
-       image: nginx
+       image: nginx:1.22.1
        ports:
          - containerPort: 80 
        volumeMounts:
-        - name: sharelogs
+        - name: share-logs
           mountPath: "/var/log/nginx"
           
      - name: busybox-sharelogs
@@ -17,9 +17,9 @@ spec:
        command: ["/bin/sh"]
        args: ["-c","count=0; while true; do count=$((count++)); echo -----------$count -------------; cat /var/log/nginx/access.log; /var/log/nginx/error.log; sleep 5; done"]
        volumeMounts:
-        - name: sharelogs
+        - name: share-logs
           mountPath: "/var/log/nginx"
 
     volumes:
-     - name: sharelogs
-       emptyDir: 
+     - name: share-logs
+       emptyDir: {}
