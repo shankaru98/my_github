@@ -6,7 +6,7 @@ spec:
     initContainers:
      - name: busybox
        image: busybox
-       command: ["/bin/bash"]
+       command: ["/bin/sh"]
        args: ["-c","echo '<html><h1>Init container</h1></html>'>> /shareDir/index.html"]
        volumeMounts:
         - name: sharedirectory
