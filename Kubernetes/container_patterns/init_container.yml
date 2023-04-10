@@ -9,7 +9,7 @@ spec:
        command: ["/bin/bash"]
        args: ["-c","echo '<html><h1>Init container</h1></html>'>> /shareDir/index.html"]
        volumeMounts:
-        - name: shareDirectory
+        - name: sharedirectory
           mountPath: "/shareDir"
 
     containers:
@@ -18,9 +18,9 @@ spec:
        ports:
          - containerPort: 80 
        volumeMounts:
-        - name: shareDirectory
+        - name: sharedirectory
           mountPath: "/usr/share/nginx/html"
 
     volumes:
-     - name: shareDirectory
+     - name: sharedirectory
        emptyDir: 
