@@ -6,7 +6,7 @@ spec:
   containers:
   - name: liveness
     image: registry.k8s.io/liveness
-     args:
+    args:
     - /server
     livenessProbe:
      httpGet:
