@@ -15,5 +15,5 @@ spec:
         httpHeaders:
         - name: Custom-Header
           value: Awesome
-      initialDelaySeconds: 5
-      periodSeconds: 5
+     initialDelaySeconds: 5
+     periodSeconds: 5
