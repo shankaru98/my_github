@@ -4,6 +4,6 @@ metadata:
   name: k8s-sa-cluster-role
 rules:
   - apiGroups: [""]
-    resources: ["depolyments"]
+    resources: ["deployments"]
     verbs: ["get", "list", "update", "create", "delete"]
     
