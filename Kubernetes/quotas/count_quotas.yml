@@ -1,8 +1,8 @@
 apiVersion: v1
-kind: ResourceQuotas
+kind: ResourceQuota
 metadata:
     name: pod-count-quota
 spec:
      hard: 
         count/pods: 2
-        
+        count/deployments: 2
