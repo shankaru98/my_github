@@ -9,11 +9,13 @@ spec:
             labels:
               app: ip-app
         spec:
+           nodeSelector:
+             node: worker1
            containers:
               - name: ip-app
                 image: shankaru/new_repo:v1
                 ports:
-                 - containerPort: 8080
+                 - containerPort: 80
     selector:
         matchLabels:
            app: ip-app           
