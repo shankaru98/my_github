@@ -5,7 +5,7 @@ metadata:
     namespace: default
 spec:
    containers:
-   - name: my_ubuntu
+   - name: my-ubuntu
      image: ubuntu
      command: ["/bin/sh"]
      args: ["-c", "while true; do echo hello; sleep 10; done"]
