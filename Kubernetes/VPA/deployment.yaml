@@ -29,10 +29,10 @@ kind: Service
 metadata:
    name: php-apache
    labels:
-     run: php-apache
+     app: php-apache
 spec:
    ports: 
     - port: 80
    selector: 
-     run: php-server
+     app: php-server
 
