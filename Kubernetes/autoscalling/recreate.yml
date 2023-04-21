@@ -9,9 +9,6 @@ spec:
            app: nginx-server
     strategy:
       type: Recreate
-      rollingUpdate:
-        maxUnavailable: 50%
-        maxSurge: 1 
     template:
         metadata:
             labels:
