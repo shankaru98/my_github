@@ -16,4 +16,4 @@ spec:
       limits:
         memory: "600Mi"
         cpu: "500m"
-  priorityClassName: high
+  priorityClassName: high 
