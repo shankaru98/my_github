@@ -18,6 +18,6 @@ spec:
                 command: 
                  - /bin/sh
                  - -c
-                 - "whlie true; do wget -q -0- http://php-apache; done"
+                 - "whlie true; do wget -q http://php-apache; done"
 
              
