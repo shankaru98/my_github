@@ -12,12 +12,12 @@ spec:
      labels:
       app: put-load
     spec:
-     containers:
-     - name: put-loads
-       image: busybox
-       command: 
-       - /bin/sh
-       - -c
-       - "whlie true; do wget -q http://php-apache; done"
+    containers:
+      - name: put-loads
+        image: busybox
+        command: 
+        - /bin/sh
+        - -c
+        - "whlie true; do wget -q http://php-apache; done"
 
              
