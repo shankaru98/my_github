@@ -9,13 +9,13 @@ spec:
       app: put-load
   template:
     metadata:
-     labels:
-       app: put-load
+      labels:
+        app: put-load
     spec:
       containers:
       - name: put-loads
         image: busybox
-        command: 
+        command:
         - /bin/sh
         - -c
-        - "whlie true; do wget -q http://php-apache; done"
+        - "while true; do wget -q http://php-apache; done"
