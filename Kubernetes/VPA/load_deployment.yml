@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: load-deployment
+  name: load-deployment
 spec:
   replicas: 1
   selector:
@@ -10,14 +10,12 @@ spec:
   template:
     metadata:
      labels:
-      app: put-load
+       app: put-load
     spec:
-    containers:
+      containers:
       - name: put-loads
         image: busybox
         command: 
         - /bin/sh
         - -c
         - "whlie true; do wget -q http://php-apache; done"
-
-             
