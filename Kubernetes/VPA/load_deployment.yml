@@ -11,8 +11,7 @@ spec:
     metadata:
      labels:
       app: put-load
-  spec:
-    containers:
+  containers:
     - name: put-loads
       image: busybox
       command: 
